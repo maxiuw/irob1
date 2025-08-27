@@ -18,18 +18,6 @@ def generate_launch_description():
     pkg_irob_assignment_1 = "/home/m/a/maciejw/code/irob1/src/irob_assignment_1"
 
     return LaunchDescription([
-        # IncludeLaunchDescription(
-        #         PythonLaunchDescriptionSource(
-        #             os.path.join(pkg_nav2_ros, 'launch', 'navigation_launch.py')
-        #         ),
-        #         launch_arguments={'use_sim_time': use_sim_time}.items(),
-        # ),
-        IncludeLaunchDescription(      
-            PythonLaunchDescriptionSource(
-                    os.path.join(pkg_slamtoolbox_ros, 'launch', 'online_async_launch.py')
-                ),
-                launch_arguments={'use_sim_time': use_sim_time}.items(),
-        ),
         Node(
             package='irob_assignment_1',
             executable='explorer',
