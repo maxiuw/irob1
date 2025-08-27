@@ -1,3 +1,7 @@
+Note, you will find a better description on the course website :)
+
+https://canvas.kth.se/courses/56459/pages/assignment-1
+
 The practical part of the assignment
 
 Now we will start with the practical part of the assignment.
