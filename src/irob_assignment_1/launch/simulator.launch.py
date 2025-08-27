@@ -20,6 +20,7 @@ def generate_launch_description():
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
 
     pkg_irob_assignment_1 = "/home/m/a/maciejw/code/irob1/src/irob_assignment_1"
+    pkg_slamtoolbox_ros = get_package_share_directory('slam_toolbox')
 
     # --- RViz Launch ---
     rviz = Node(
@@ -52,6 +53,11 @@ def generate_launch_description():
             PythonLaunchDescriptionSource([launch_file_dir, '/robot_state_publisher.launch.py']),
             launch_arguments={'use_sim_time': use_sim_time}.items(),
         ),
-
-        rviz
+        rviz,
+        IncludeLaunchDescription(      
+            PythonLaunchDescriptionSource(
+                    os.path.join(pkg_slamtoolbox_ros, 'launch', 'online_async_launch.py')
+                ),
+                launch_arguments={'use_sim_time': use_sim_time}.items(),
+        ),
     ])
